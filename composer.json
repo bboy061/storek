@@ -1,0 +1,10 @@
+{
+    "name": "bboy061/storek",
+    "require": {
+        "symfony/routing": "*",
+		"symfony/dependency-injection": "*",
+		"symfony/security": "*",
+		"symfony/translation": "*",
+		"doctrine/orm": "*"
+    }
+}
