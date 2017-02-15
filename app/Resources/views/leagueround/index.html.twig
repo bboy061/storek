@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Leaguerounds list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Startdate</th>
+                <th>Enddate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for leagueRound in leagueRounds %}
+            <tr>
+                <td><a href="{{ path('admin_leagueround_show', { 'id': leagueRound.id }) }}">{{ leagueRound.id }}</a></td>
+                <td>{{ leagueRound.name }}</td>
+                <td>{% if leagueRound.startDate %}{{ leagueRound.startDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if leagueRound.endDate %}{{ leagueRound.endDate|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_leagueround_show', { 'id': leagueRound.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_leagueround_edit', { 'id': leagueRound.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_leagueround_new') }}">Create a new leagueRound</a>
+        </li>
+    </ul>
+{% endblock %}

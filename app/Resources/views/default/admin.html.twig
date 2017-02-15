@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ url('admin_config_index') }}" title="Config">
+        Config
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_news_index') }}" title="News">
+        News
+    </a>
+    <br /><br />
+    <a href="{{ url('yearseason_index') }}" title="YearSeason">
+        YearSeason
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_season_index') }}" title="Season">
+        Season
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_seasonstatus_index') }}" title="Season status">
+        Season status
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_season_create') }}" title="Season create create">
+        Season create create
+    </a>
+    <br /><br />
+    <a href="{{ url('league_index') }}" title="League">
+        League
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_leaguegroup_index') }}" title="League group">
+        League group
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_leagueround_index') }}" title="League round">
+        League round
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_team_index') }}" title="Team">
+        Team
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_player_index') }}" title="Player">
+        Player
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_leagueteamsmatch_index') }}" title="League teams match">
+        League teams match
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_leaguematch_index') }}" title="League match">
+        League match
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_leaguedoublesmatch_index') }}" title="League doubles match">
+        League doubles match
+    </a>
+    <br /><br />
+    <a href="{{ url('admin_game_index') }}" title="Game">
+        Game
+    </a>
+{% endblock %}

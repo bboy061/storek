@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Storek</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        {% block stylesheets %}
+            <link href="{{ asset('css/storek.css') }}" rel="stylesheet" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div id="wrapper" class="wrapper">
+            <header>
+                <div class="container">
+                    <div class="header-content txt-c">
+                        <a class="logo" href="{{ url('home') }}" title="storek">
+                            <img src="{{ asset('img/storek.png') }}" alt="storek" />
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <nav>
+                <div class="container">
+                    <div class="nav">
+                        <ul class="wrap nav__list">
+                            <li class="pull-left nav__list-item"><a class="nav__list-link" href="{{ url('home') }}">Naslovna</a></li>
+                            <li class="pull-left nav__list-item rules dd-menu-trigger">
+                                <a class="nav__list-link" href="{{ url('results') }}">Rezultati</a>
+                                <div class="dd-menu">
+                                    <div class="dd-menu__list">
+                                        <div class="dd-menu__list-item super-league">Super Liga</div>
+                                        <div class="dd-menu__list-item">Prva Liga</div>
+                                        <div class="dd-menu__list-item">Druga Liga</div>
+                                        <div class="dd-menu__list-item">Treca Liga</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="pull-left nav__list-item"><a class="nav__list-link" href="{{ url('teams') }}">Ekipe</a></li>
+                            <li class="pull-left nav__list-item"><a class="nav__list-link" href="{{ url('rankings') }}">Rang liste</a></li>
+                            <li class="pull-right nav__list-item contact-tab dd-menu-trigger">
+                                <a class="nav__list-link" href="{{ url('contact') }}">Kontakt</a>
+                                <div class="dd-menu">
+                                    <div class="contact txt-l">
+                                        <div class="table p10">
+                                            <div class="table-cell contact-icon txt-c"><img src="{{ asset('img/phone-icon.png') }}" alt=""></div>
+                                            <div class="table-cell contact-desc">Konakt telefon</div>
+                                            <div class="table-cell contact-value">034/33-77-98 <br> 063/368-600</div>
+                                        </div>
+                                        <div class="table p10">
+                                            <div class="table-cell contact-icon txt-c"><img src="{{ asset('img/email-icon.png') }}" alt=""></div>
+                                            <div class="table-cell contact-desc">Email adresa</div>
+                                            <div class="table-cell contact-value"><a href="mailto:storekasi@gmail.com">storekasi@gmail.com</a></div>
+                                        </div>
+                                        <div class="table p10">
+                                            <div class="table-cell contact-icon txt-c"><img src="{{ asset('img/place-icon.png') }}" alt=""></div>
+                                            <div class="table-cell contact-desc">Adresa</div>
+                                            <div class="table-cell contact-value">Karađorđeva 51 <br> 34000 Kragujevac</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="pull-right nav__list-item"><a class="nav__list-link" href="{{ url('about-us') }}">O nama</a></li>
+                            <li class="pull-right nav__list-item"><a class="nav__list-link" href="{{ url('playing-halls') }}">Sale za igranje</a></li>
+                            <li class="pull-right nav__list-item"><a class="nav__list-link" href="{{ url('news') }}">Vesti</a></li>
+                            <li class="pull-right nav__list-item rules dd-menu-trigger">
+                                <a class="nav__list-link" href="{{ url('rules') }}">Pravilnik</a>
+                                <div class="dd-menu">
+                                    <div class="dd-menu__list">
+                                        <div class="dd-menu__list-item">Opšta pravila</div>
+                                        <div class="dd-menu__list-item">Pravilnik o takmicenju</div>
+                                        <div class="dd-menu__list-item">Disciplinski pravilnik</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <main>
+                <div class="container wrap">
+                    {% block body %}{% endblock %}
+                </div>
+            </main>
+            <footer>
+                <div class="adds">
+                    footer
+                </div>
+            </footer>
+        </div>
+
+        <div id="example">
+        </div>
+        
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+            <script src="{{ asset('js/react.min.js') }}"></script>
+            <script src="{{ asset('js/react-dom.min.js') }}"></script>
+            <script src="{{ asset('js/browser.min.js') }}"></script>
+            <script src="{{ asset('js/main.js') }}"></script>
+            <script type="text/babel">
+                var Bacon = React.createClass({
+                    render: function() {
+                        return (<h1>Mladen</h1>);
+                    }
+                })
+
+                ReactDOM.render(
+                    <Bacon />,
+                    document.getElementById('example')
+                );
+            </script>
+        {% endblock %}
+    </body>
+</html>

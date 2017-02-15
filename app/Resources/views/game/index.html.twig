@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Games list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Hostscore</th>
+                <th>Guestscore</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for game in games %}
+            <tr>
+                <td><a href="{{ path('admin_game_show', { 'id': game.id }) }}">{{ game.id }}</a></td>
+                <td>{{ game.hostScore }}</td>
+                <td>{{ game.guestScore }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_game_show', { 'id': game.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_game_edit', { 'id': game.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_game_new') }}">Create a new game</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Leaguedoublesmatches list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for leagueDoublesMatch in leagueDoublesMatches %}
+            <tr>
+                <td><a href="{{ path('admin_leaguedoublesmatch_show', { 'id': leagueDoublesMatch.id }) }}">{{ leagueDoublesMatch.id }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_leaguedoublesmatch_show', { 'id': leagueDoublesMatch.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_leaguedoublesmatch_edit', { 'id': leagueDoublesMatch.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_leaguedoublesmatch_new') }}">Create a new leagueDoublesMatch</a>
+        </li>
+    </ul>
+{% endblock %}

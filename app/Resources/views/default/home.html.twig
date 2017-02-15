@@ -1,0 +1,141 @@
+{% extends 'site-base.html.twig' %}
+
+{% block body %}
+    <div class="table">
+        <div class="main-content txt-c table-cell">
+            {% for oneNews in news %}
+                <div class="text-block">
+                    <h2 class="title">{{ oneNews.title }}</h2>
+                    <h4 class="text">{{ oneNews.createdDate|date('Y-m-d') }}</h4>
+                    <p class="text">{{ oneNews.content|raw }}</p>
+                </div>
+                <div class="separator"></div>
+            {% endfor %}
+        </div>
+        <div class="sidebar table-cell">
+            <div class="heading">Predstojeći mečevi</div>
+            <select class="select-dd mt5">
+                <option value="">Super Liga</option>
+                <option value="">Prva Liga</option>
+                <option value="">Druga Liga</option>
+                <option value="">Treca Liga</option>
+            </select>
+            <div class="event-block txt-c mt10">
+                <div class="event-heading">II Kolo</div>
+                <div class="event">
+                    <div class="event-content table">
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                        <div class="event-info table-cell">
+                            <div class="event-date">03.10.2016 - 09.10.2016.</div>
+                            <div class="event-result mt5 table">
+                                <span class="result result-home table-cell">3</span>
+                                <span class="vs table-cell">-</span>
+                                <span class="result result-away table-cell">7</span>
+                            </div>
+                        </div>
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                    </div>
+                    <div class="event-teams table">
+                        <span class="team team-home table-cell">Strelac</span>
+                        <span class="vs table-cell">vs</span>
+                        <span class="team team-away table-cell">TST</span>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-content table">
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                        <div class="event-info table-cell">
+                            <div class="event-date">09.10.2016.</div>
+                            <div class="event-result mt5 table">
+                                <span class="result result-home table-cell">20:00</span>
+                            </div>
+                        </div>
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                    </div>
+                    <div class="event-teams table">
+                        <span class="team team-home table-cell">Božuri</span>
+                        <span class="vs table-cell">vs</span>
+                        <span class="team team-away table-cell">Storekaši</span>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-content table">
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                        <div class="event-info table-cell">
+                            <div class="event-date">03.10.2016 - 09.10.2016.</div>
+                            <div class="event-result mt5 table">
+                                <span class="result result-home table-cell">3</span>
+                                <span class="vs table-cell">-</span>
+                                <span class="result result-away table-cell">7</span>
+                            </div>
+                        </div>
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                    </div>
+                    <div class="event-teams table">
+                        <span class="team team-home table-cell">Strelac</span>
+                        <span class="vs table-cell">vs</span>
+                        <span class="team team-away table-cell">TST</span>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-content table">
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                        <div class="event-info table-cell">
+                            <div class="event-date">09.10.2016.</div>
+                            <div class="event-result mt5 table">
+                                <span class="result result-home table-cell">20:00</span>
+                            </div>
+                        </div>
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                    </div>
+                    <div class="event-teams table">
+                        <span class="team team-home table-cell">Božuri</span>
+                        <span class="vs table-cell">vs</span>
+                        <span class="team team-away table-cell">Storekaši</span>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-content table">
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                        <div class="event-info table-cell">
+                            <div class="event-date">03.10.2016 - 09.10.2016.</div>
+                            <div class="event-result mt5 table">
+                                <span class="result result-home table-cell">3</span>
+                                <span class="vs table-cell">-</span>
+                                <span class="result result-away table-cell">7</span>
+                            </div>
+                        </div>
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                    </div>
+                    <div class="event-teams table">
+                        <span class="team team-home table-cell">Strelac</span>
+                        <span class="vs table-cell">vs</span>
+                        <span class="team team-away table-cell">TST</span>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-content table">
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                        <div class="event-info table-cell">
+                            <div class="event-date">09.10.2016.</div>
+                            <div class="event-result mt5 table">
+                                <span class="result result-home table-cell">20:00</span>
+                            </div>
+                        </div>
+                        <div class="team-logo table-cell"><img src="{{ asset('img/team-logo.png') }}" alt=""></div>
+                    </div>
+                    <div class="event-teams table">
+                        <span class="team team-home table-cell">Božuri</span>
+                        <span class="vs table-cell">vs</span>
+                        <span class="team team-away table-cell">Storekaši</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

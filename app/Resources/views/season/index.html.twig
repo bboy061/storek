@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Seasons list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Startdate</th>
+                <th>Enddate</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for season in seasons %}
+            <tr>
+                <td><a href="{{ path('admin_season_show', { 'id': season.id }) }}">{{ season.id }}</a></td>
+                <td>{{ season.name }}</td>
+                <td>{{ season.year }}</td>
+                <td>{% if season.startDate %}{{ season.startDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if season.endDate %}{{ season.endDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ season.status }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_season_show', { 'id': season.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_season_edit', { 'id': season.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_season_new') }}">Create a new season</a>
+        </li>
+    </ul>
+{% endblock %}

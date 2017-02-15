@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Storek admin</title>
+    </head>
+    <body>
+        <a href="{{ url('admin') }}" title="Admin home page">
+            Admin home page
+        </a>
+        <br /><br />
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

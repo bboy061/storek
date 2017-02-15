@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>News edit</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input id="submitButton" type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_news_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/tinymce/tinymce.min.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            tinymce.init({
+                selector: "textarea",
+                plugins: "link image preview table media",
+                menu: {},
+                toolbar: 'undo redo | styleselect | bold italic | link image | table media | preview'
+            });
+
+            $('#submitButton').click(function(){
+               tinymce.triggerSave();
+            });
+        });
+    </script>
+{% endblock %}

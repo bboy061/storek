@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Seasonstatuses list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for seasonStatus in seasonStatuses %}
+            <tr>
+                <td><a href="{{ path('admin_seasonstatus_show', { 'id': seasonStatus.id }) }}">{{ seasonStatus.id }}</a></td>
+                <td>{{ seasonStatus.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_seasonstatus_show', { 'id': seasonStatus.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_seasonstatus_edit', { 'id': seasonStatus.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_seasonstatus_new') }}">Create a new seasonStatus</a>
+        </li>
+    </ul>
+{% endblock %}
